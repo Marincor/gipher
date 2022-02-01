@@ -120,26 +120,33 @@ class _HomePageState extends State<HomePage> {
           );
         } else {
           return Container(
-            child: GestureDetector(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(
-                    Icons.add,
-                    color: Colors.white,
-                    size: 70.0,
-                  ),
-                  Text("Caregar mais...",
-                      style: TextStyle(color: Colors.white, fontSize: 22.0)),
-                ],
-              ),
-              onTap: () {
+              child: GestureDetector(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(
+                  Icons.add,
+                  color: Colors.white,
+                  size: 70.0,
+                ),
+                Text("Caregar mais...",
+                    style: TextStyle(color: Colors.white, fontSize: 22.0)),
+              ],
+            ),
+            onTap: () {
+              setState(() {
+                _offset += 19;
+              });
+            },
+            onVerticalDragUpdate: (details) {
+              int sensitivity = 8;
+              if (details.delta.dy < -sensitivity) {
                 setState(() {
                   _offset += 19;
                 });
-              },
-            ),
-          );
+              }
+            },
+          ));
         }
       },
     );
