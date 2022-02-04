@@ -31,7 +31,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _getGifs().then((value) => print("objeto é igual a: $value"));
   }
 
   @override
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             child: TextField(
               // ignore: prefer_const_constructors
               decoration: InputDecoration(
-                  labelText: "Search a gif",
+                  labelText: "Buscar gif",
                   // ignore: prefer_const_constructors
                   labelStyle: TextStyle(color: Colors.grey),
                   // ignore: prefer_const_constructors
@@ -145,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                   size: 70.0,
                 ),
-                Text("Caregar mais...",
+                Text("Carregar mais...",
                     style: TextStyle(color: Colors.white, fontSize: 22.0)),
               ],
             ),
